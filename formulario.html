@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Endereço</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #0b0b0c; color: #e9e9ea; }
+  .wrap { max-width: 640px; margin: 40px auto; padding: 24px; background: #121214; border: 1px solid #1f1f22; border-radius: 14px; }
+  h1 { font-size: 22px; margin: 0 0 16px; }
+  .grid { display: grid; gap: 14px; }
+  label { font-size: 14px; display: block; margin-bottom: 6px; color: #c9c9cc; }
+  input { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid #2a2a2e; background: #0f0f11; color: #fff; outline: none; }
+  input:focus { border-color: #4c89ff; box-shadow: 0 0 0 3px rgba(76,137,255,.15); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  button { margin-top: 8px; width: 100%; padding: 12px 16px; border: 0; border-radius: 10px; background: #4c89ff; color: #fff; font-weight: 600; cursor: pointer; }
+  button:hover { filter: brightness(1.05); }
+  .hint { font-size: 12px; color: #9ea0a6; margin-top: 4px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Cadastro de Endereço</h1>
+    <form id="form-endereco" novalidate>
+      <div class="grid">
+        <div>
+          <label for="cep">CEP*</label>
+          <input id="cep" name="cep" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" maxlength="9">
+          <div class="hint">Formato: 00000-000</div>
+        </div>
+        <div>
+          <label for="logradouro">Logradouro*</label>
+          <input id="logradouro" name="logradouro" type="text" autocomplete="address-line1" placeholder="Rua, Avenida, Travessa...">
+        </div>
+        <div class="row">
+          <div>
+            <label for="numero">Número*</label>
+            <input id="numero" name="numero" type="text" inputmode="numeric" placeholder="Somente números">
+          </div>
+          <div>
+            <label for="uf">UF*</label>
+            <input id="uf" name="uf" type="text" placeholder="SP" maxlength="2" autocomplete="address-level1">
+          </div>
+        </div>
+        <div>
+          <label for="complemento">Complemento</label>
+          <input id="complemento" name="complemento" type="text" autocomplete="address-line2" placeholder="Apto, Bloco, Casa...">
+        </div>
+        <button type="submit">Salvar Endereço</button>
+      </div>
+    </form>
+  </div>
+<script src="./js/script.js"></script>
+</body>
+</html>
